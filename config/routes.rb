@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :books do
+    get :search, :on => :collection
+  end
+
+  resources :handlers, :only => [:index]
+
+  root 'books#index'
 end

@@ -1,0 +1,19 @@
+<article class="app-cont books-list">
+  <section class="app-content">
+    <% @books.each do |book| %>
+      <div class="book">
+        <p class="img">
+          <%= image_tag book.image_url %>
+        </p>
+        <h3 class="title"><%= book.title %></h3>
+        <h4 class="author">by <%= book.author %></h4>
+        <p class="details">
+          <span><%= number_to_currency(book.price) %></span>
+          <span>Published on <%= book.published_at.strftime('%B %Y') %></span>
+        </p>
+      </div>
+    <% end %>
+  </section>
+
+</article>
+
